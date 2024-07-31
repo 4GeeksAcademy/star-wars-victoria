@@ -37,6 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 const favoritosActualizados = [...store.favoritos,name]
                 setStore({favoritos: favoritosActualizados})
             },
+            
             eliminarFavoritos: (name) => {
                 const store = getStore();
                 const favoritosActualizados = store.favoritos.filter(favorito => favorito !== name);
