@@ -14,9 +14,9 @@ export const Home = () => {
 
     return (
             <div>
-            <h1 className="text-danger text-start">Characters</h1>
-            <div className="container-fluid">
-                <div className="d-flex overflow-auto ">
+            <h1 className="text-danger text-start ms-4">Characters</h1>
+            <div className="contenedor-tarjetas container-fluid">
+                <div className="d-flex overflow-auto mb-5">
                     {store.personajes.map((item, index) => (
                         <CartaPersonaje 
                             key={index}
@@ -29,9 +29,9 @@ export const Home = () => {
                     ))}
                 </div>
             </div>
-            <h1 className="text-danger text-start">Planets</h1>
+            <h1 className="text-danger text-start ms-4">Planets</h1>
             <div className="container-fluid">
-                <div className="d-flex overflow-auto ">
+                <div className="d-flex overflow-auto">
                     {store.planetas.map((item, index) => (
                         <CartaPlaneta 
                             key={index}

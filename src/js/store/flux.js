@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         store: {
             personajes: [],
             planetas: [],
+            favoritos: [],
         },
         actions: {
             characters: async () => {
@@ -29,7 +30,18 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log(error);
                     return false;
                 }
-            }
+            },
+
+            añadirFavoritos: (name) => {
+                const store = getStore();
+                const favoritosActualizados = [...store.favoritos,name]
+                setStore({favoritos: favoritosActualizados})
+            },
+            eliminarFavoritos: (name) => {
+                const store = getStore();
+                const favoritosActualizados = store.favoritos.filter(favorito => favorito !== name);
+                setStore({ favoritos: favoritosActualizados });
+            },
         }
     };
 };
